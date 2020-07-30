@@ -13,7 +13,7 @@ const getForks = async (studentList) => {
   // filters out the users from the 'studentList' variable that are not in the 'whoForked' variable
   let didNotFork = studentList.filter(student => !whoForked.includes(student))
 
-  //logs to the console who has and hasn't forked the repo
+  // logs to the console who has and hasn't forked the repo
   console.log(whoForked.length ? { whoForked } : 'No one has forked the repo.')
   console.log(didNotFork.lenght ? { didNotFork } : 'Everyone has forked the repo.')
 
