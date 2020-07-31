@@ -15,7 +15,7 @@ const getForks = async (studentList) => {
 
   // logs to the console who has and hasn't forked the repo
   console.log(whoForked.length ? { whoForked } : 'No one has forked the repo.')
-  console.log(didNotFork.lenght ? { didNotFork } : 'Everyone has forked the repo.')
+  console.log(didNotFork.length ? { didNotFork } : 'Everyone has forked the repo.')
 
 
   return data
