@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const getForks = async (studentList) => {
-  // calls the github's api repos route for the SummerOfCode organization's 'week-09-classwork-express-web' repo's forked information
+  // calls the github's api repos route for the SummerOfCode organization's 'week-10-express-api' repo's forked information
   const { data } = await axios.get('https://api.github.com/repos/SummerOfCode2020/week-09-classwork-duck-hunt/forks')
 
   // reduces the data down to an array of usernames
@@ -16,9 +16,6 @@ const getForks = async (studentList) => {
   // logs to the console who has and hasn't forked the repo
   console.log(whoForked.length ? { whoForked } : 'No one has forked the repo.')
   console.log(didNotFork.length ? { didNotFork } : 'Everyone has forked the repo.')
-
-
-  return data
 }
 
 // initializes the studentList
