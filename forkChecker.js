@@ -21,7 +21,7 @@ const getForks = async (repoName) => {
 }
 
 // defines the repoName based on what is passed in after the script command
-// npm run fork -- REPO_NAME_HERE
+// npm run fork -- REPO_NAME_HERE   or   npm run fork REPO_NAME_HERE
 const repoName = process.argv[2]
 
 // calls the function
