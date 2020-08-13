@@ -1,10 +1,10 @@
 const axios = require('axios')
 const studentList = require('./studentList')
 
-const getPullRequests = async () => {
+const getPullRequests = async (repoName) => {
   // calls the github's api repos route for the SummerOfCode organization's 'week-10-express-api' repo's pull request on information
   // GET /repos/:owner/:repo/pulls
-  const { data } = await axios.get('https://api.github.com/repos/SummerOfCode2020/week-10-express-api/pulls')
+  const { data } = await axios.get(`https://api.github.com/repos/SummerOfCode2020/${repoName}/pulls`)
 
   // reduces the data down to an array of usernames
   const whoPulled = data.reduce((userArray, object) => {
@@ -20,5 +20,9 @@ const getPullRequests = async () => {
   console.log(didNotPR.length ? { didNotPR } : 'Everyone has pulled a request on the repo.')
 }
 
+// defines the repoName based on what is passed in after the script command
+// npm run pull -- REPO_NAME_HERE
+const repoName = process.argv[2]
+
 // calls the function
-getPullRequests()
+getPullRequests(repoName)
